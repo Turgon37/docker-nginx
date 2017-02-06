@@ -1,6 +1,7 @@
 # Docker Nginx
 
-
+[![](https://images.microbadger.com/badges/image/turgon37/nginx.svg)](https://microbadger.com/images/turgon37/nginx "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/turgon37/nginx.svg)](https://microbadger.com/images/turgon37/nginx "Get your own version badge on microbadger.com")
 
 This images contains an instance of Nginx and a base template for a secure configuration.
 This image use the concept of site-available and site-enable to make the configuration of  virtual hosts more flexible.

@@ -6,6 +6,8 @@
 This images contains an instance of Nginx and a base template for a secure configuration.
 This image use the concept of site-available and site-enable to make the configuration of  virtual hosts more flexible.
 
+Please notice that if it's the first time the container is run, the DH parameters file will be generated and this can take a long time.
+
 Nginx is configured according to the recommandation this [site](https://weakdh.org/sysadmin.html)
 
 It is not intended to be used directly but to be extend for building another nginx image with contains your virtual hosts configurations.

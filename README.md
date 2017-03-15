@@ -23,8 +23,9 @@ It is not intended to be used directly but to be extend for building another ngi
 
  * This image takes theses environnements variables as parameters
 
-| Environment        | Usage           |
-| -------------      | --------------- |
+| Environment     | Usage                                                                           |
+| --------------- | ---------------                          -------------------------------------- |
+| ENABLE_HTTPS    | Set to yes to enable docker https features. Set to no to speed up the first run |
 
  * The following volume is exposed by this image
 

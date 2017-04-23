@@ -8,7 +8,7 @@ This image use the concept of site-available and site-enable to make the configu
 
 Please notice that if it's the first time the container is run, the DH parameters file will be generated and this can take a long time.
 
-Nginx is configured according to the recommandation this [site](https://weakdh.org/sysadmin.html)
+Nginx is configured according to the recommandations on this [site](https://weakdh.org/sysadmin.html)
 
 It is not intended to be used directly but to be extend for building another nginx image with contains your virtual hosts configurations.
 
@@ -31,7 +31,7 @@ It is not intended to be used directly but to be extend for building another ngi
 
 | Volume         | Usage                                               |
 | -------------- | --------------------------------------------------- |
-| /etc/nginx/ssl | The path where all TLS/SSL crypto files will be put |
+| /etc/nginx/ssl | The default path where all TLS/SSL crypto files will be put |
 
 ## Installation
 

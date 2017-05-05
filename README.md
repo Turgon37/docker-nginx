@@ -35,14 +35,14 @@ It is not intended to be used directly but to be extend for building another ngi
 
 ## Installation
 
-* Manual
+* Manual build from sources
 
 ```
 git clone
 docker build -t turgon37/nginx .
 ```
 
-* or Automatic
+* or Automatic pull from hub
 
 ```
 docker pull turgon37/nginx
@@ -51,8 +51,28 @@ docker pull turgon37/nginx
 
 ## Usage
 
-Use it as a base for your nginx image
+Use it as a base for your own nginx images.
+
+This image contains two folder, /etc/nginx/sites-available and /etc/nginx/sites-enabled. In the first you can put a file per virtual host, each of them will contains the nginx directives. Then, you must create a symbolik link into the sites-enabled for each virtual host you want to enable.
+Take care that the path the symlink must be either relative or absolute from the docker root directory. I recommands you to use a relative one by using a command like this from the sites-available folder :
+```ln -s ../sites-available/php```
+
+As an example you can create a project folder which contain the two folder sites-available and sites-enabled. Then, you just have to create a dockerfile which encapsulate this image.
+
 
 ```
 FROM turgon37/nginx
+
+# copy local files
+COPY sites-available/ /etc/nginx/sites-available
+COPY sites-enabled/ /etc/nginx/sites-enabled
 ```
+
+Or another way can be to use a host mount point
+
+```
+docker run
+   -v $(pwd)/sites-enabled:/etc/nginx/sites-enabled:ro 
+   -v $(pwd)/sites-available:/etc/nginx/sites-available:ro 
+   -p 80:80
+   turgon37/nginx

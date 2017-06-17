@@ -12,5 +12,6 @@ RUN apk --no-cache add \
 COPY root/ /
 
 VOLUME ["/etc/nginx/ssl"]
+WORKDIR /etc/nginx
 
 CMD ["/start.sh"]

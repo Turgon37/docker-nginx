@@ -8,4 +8,4 @@ if [[ ${ENABLE_HTTPS:-yes} = "yes" ]]; then
   fi
 fi
 
-exec nginx -g "daemon off;"
+exec nginx -g "daemon off; user $NGINX_USER $NGINX_GROUP;"
